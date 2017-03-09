@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Winter Scarves</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- replace with your personal Font Awesome CDN link -->
+    <script src="https://use.fontawesome.com/0aebed106c.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Hats</a></li>
+                <li><a href="#">Gloves</a></li>
+                <li><a href="#">Scarves</a></li>
+                <li class="cart-info">
+                    <a href="ViewCart.html" id="view"><i class="fa fa-shopping-cart" aria-hidden="true"> <span id="NoOfItems"></span></i></a>
+                    <!--onclick="generate_table(); return false; onclick="generate_table(); return true;"-->
+                </li>
+
+            </ul>
+        </nav>
+        <div class="logotitle">
+            <div class="logoimage">
+                <img srcset="images/logo-scarfcat-50px.png  50w, images/logo-scarfcat-80px.png 80w, images/logo-scarfcat-100px.png  100w"
+                     sizes="(max-width: 500px) 50px, (max-width: 1400px) 80px ,(min-width: 1401px) 100px"
+                     src="images/logo-scarfcat-200px.png"
+                     alt="cat with a scarf">
+            </div>
+            <div class="logoheader">
+                <h1>Winter Wear Warehouse</h1>
+            </div>
+        </div>
+    </header>
+
+    <aside>
+        <form name="custInfo" onsubmit="captureInfo()">
+            <label>
+                Filter By:
+                <select name="filter">
+                    <option value="">Choose One</option>
+                    <option value="price">Price</option>
+                    <option value="name">Name</option>
+                </select>
+            </label>
+            <input type="submit" value="Sort" onclick=" sorting()">
+        </form>
+    </aside>
+
+    <div class="container">
+
+        <h2>Scarves</h2>
+        <div class="item-container">
+            <div class="item">
+                <!-- code template for a single item will go here -->
+                <h5>Northen Lights</h5>
+                <img srcset="images/northern-lights-200px.jpg  200w, images/northern-lights-300px.jpg 300w, images/northern-lights-492px.jpg  492w"
+                     sizes="(max-width: 800px) 200px, (max-width: 1600px) 300px ,(min-width: 1601px) 492px"
+                     src="images/northern-lights-200px.jpg"
+                     alt="northen lights">
+                <p>Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.</p>
+                <p>$29.99</p>
+                <button type="button" onclick="AddtoCart('Northen Lights' ,'29.99')">Add to Cart</button>
+                <!--                <button type="button" onclick="">Remove from Cart</button>-->
+                <button type="button" onclick="remove('Northen Lights')">Remove</button>
+            </div>
+            <div class="item">
+                <!-- code template for a single item will go here -->
+                <h5>Reversible Plaid</h5>
+                <img srcset="images/reversible-plaid-200px.jpg  200w, images/reversible-plaid-300px.jpg  300w, images/reversible-plaid-492px.jpg  492w"
+                     sizes="(max-width: 800px) 200px, (max-width: 1600px) 300px ,(min-width: 1601px) 492px"
+                     src="images/reversible-plaid-200px.jpg"
+                     alt="reversible plaid">
+                <p>Two classic patterns in one great look: This supersoft and cozy reversible scarf instantly doubles your street-style cred. 100% acrylic.</p>
+                <p>$26.99</p>
+                <button type="button" onclick="AddtoCart('Reversible Plaid','26.99')">Add to Cart</button>
+                 <button type="button" onclick="remove('Reversible Plaid')">Remove</button>
+                 
+            </div>
+            <div class="item">
+                <!-- code template for a single item will go here -->
+                <h5>Wool Cable Knit</h5>
+                <img srcset="images/wool-cable-200px.jpeg  200w, images/wool-cable-300px.jpeg  300w, images/wool-cable-492px.jpeg  492w"
+                     sizes="(max-width: 800px) 200px, (max-width: 1600px) 300px ,(min-width: 1601px) 492px"
+                     src="images/wool-cable-200px.jpeg"
+                     alt="wool cable">
+                <p>Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported</p>
+                <p>$49.99</p>
+                <button type="button" onclick="AddtoCart('Wool Cable Knit','49.99')">Add to Cart</button>
+                <button type="button" onclick="remove('Wool Cable Knit')">Remove</button>
+            </div>
+            <div class="item">
+                <!-- code template for a single item will go here -->
+                <h5>Ombre Infinity</h5>
+                <img srcset="images/ombre-infinity-200px.jpg  200w, images/ombre-infinity-300px.jpg  300w, images/ombre-infinity-492px.jpg  492w"
+                     sizes="(max-width: 800px) 200px, (max-width: 1600px) 300px ,(min-width: 1601px) 492px"
+                     src="images/ombre-infinity-200px.jpg"
+                     alt="ombre infinity">
+                <p>A dip-dye effect adds color and dimension to a cozy infinity scarf featuring a soft, chunky knit. 100% acrylic</p>
+                <p>$11.99</p>
+                <button type="button" onclick="AddtoCart('Ombre Infinity','11.99')">Add to Cart</button>
+                <button type="button" onclick="remove('Ombre Infinity')">Remove</button>
+            </div>
+            <div class="item">
+                <!-- code template for a single item will go here -->
+                <h5>Fringed Plaid</h5>
+                <img srcset="images/fringed-plaid-200px.jpeg  200w, images/fringed-plaid-300px.jpeg  300w, images/fringed-plaid-492px.jpeg  492w"
+                     sizes="(max-width: 800px) 200px, (max-width: 1600px) 300px ,(min-width: 1601px) 492px"
+                     src="images/fringed-plaid.jpeg"
+                     alt="fringed-plaid">
+                <p>Generously sized, extra soft and featuring a dazzling fringe, this scarf is rendered in a versatile gray, black and white plaid. Expertly beat the cold with style. 100% acrylic.</p>
+                <p>$18.99</p>
+                <button type="button" onclick="AddtoCart('Fringed Plaid','18.99')">Add to Cart</button>
+                 <button type="button" onclick="remove('Fringed Plaid')">Remove</button>
+            </div>
+            <div class="item">
+                <!-- code template for a single item will go here -->
+                <h5>Multi Color</h5>
+                <img srcset="images/multi-color-200px.jpeg  200w, images/multi-color-300px.jpeg  300w, images/multi-color-492px.jpeg  492w"
+                     sizes="(max-width: 800px) 200px, (max-width: 1600px) 300px ,(min-width: 1601px) 492px"
+                     src="images/multi-color.jpeg"
+                     alt="multi-color">
+                <p>All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic.</p>
+                <p>$22.99</p>
+                <button type="button" onclick="AddtoCart('Multi Color','22.99')">Add to Cart</button>
+                <button type="button" onclick="remove('Multicolor')">Remove</button>
+            </div>
+            <div class="item">
+                <!-- code template for a single item will go here -->
+                <h5>Etro Paisley-Print Silk</h5>
+                <img srcset="images/etro-200px.png  200w, images/etro-300px.png  300w, images/etro-492px.png  492w"
+                     sizes="(max-width: 800px) 200px, (max-width: 1600px) 300px ,(min-width: 1601px) 492px"
+                     src="images/etro.png"
+                     alt="etro pic">
+                <p>Luxurious silk scarf with subtle paisley pattern. 100% silk.</p>
+                <p>$249.99</p>
+                <button type="button" onclick="AddtoCart('Etro Paisley-Print Silk','249.99')">Add to Cart</button>
+                <button type="button" onclick="remove('Etro Paisley-Print Silk')">Remove</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
